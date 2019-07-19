@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "add geetest to the registration process",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/geek-zwb/nodebb-plugin-geetest.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -24,12 +24,14 @@ plugin.init = function (params, callback) {
     });
 }
 plugin.addCaptcha = function (data, callback) {
+    winston.info('[plugins geetest] geetestIns' + geetestIns);
     if (geetestIns) {
         // 向极验申请每次验证所需的challenge
         geetestIns.register({
             client_type: 'unknown',
             ip_address: 'unknown'
         }, function (err, resp) {
+            winston.info('[plugins geetest] register resp' + resp);
             if (err) {
                 winston.error(err);
                 return;

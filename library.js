@@ -76,6 +76,8 @@ plugin.addCaptcha = function (data, callback) {
                     data.templateData.captcha = captcha;
                 }
             }
+
+            callback(null, data);
         });
     }
 }

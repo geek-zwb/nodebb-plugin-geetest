@@ -1,0 +1,24 @@
+{
+  "name": "nodebb-plugin-geetest",
+  "version": "0.1.0",
+  "description": "add geetest to the registration process",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodebb",
+    "plugin",
+    "captcha",
+    "geetest",
+    "spam"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "gt3-sdk": "^2.0.0"
+  },
+  "nbbpm": {
+    "compatibility": "^1.11.0"
+  }
+}

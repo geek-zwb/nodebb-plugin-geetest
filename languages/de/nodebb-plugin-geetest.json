@@ -1,0 +1,16 @@
+{
+  "label": "Captcha",
+  "solve": "Geben Sie die Lösung der Rechnung ein: ",
+  "solution_placeholder": "Lösung",
+  "failed": "Die eingegebene Lösung des Captchas war falsch!",
+  "admin_counter_name": "Zählername",
+  "admin_counter_value": "Anzahl",
+  "admin_failures_session": "Ungültige Sitzung",
+  "admin_failures_empty": "Leere Lösung",
+  "admin_failures_honeypot": "Honiglösung",
+  "admin_failures_nan": "Keine Ganzzahl",
+  "admin_failures_wrong": "Falsche Lösung",
+  "admin_total_failures_count": "Total falsche Lösungen",
+  "admin_correct_count": "Korrekte Lösung",
+  "admin_created_count": "Erstellte Captcha"
+}

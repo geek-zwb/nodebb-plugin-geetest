@@ -15,10 +15,10 @@ $(function() {
         onRecaptachaArgsReady(function () {
             if (! $('script[src*="static.geetest.com/static/tools/gt.js"]').length) {
                 injectScript('//static.geetest.com/static/tools/gt.js?_t=' + new Date().getTime(), {
-                    onload: window.__nodebbGreetestCreateCaptcha__
+                    onload: window.__nodebbGeetestCreateCaptcha__
                 });
             } else if (initGeetest) {
-                window.__nodebbGreetestCreateCaptcha__();
+                window.__nodebbGeetestCreateCaptcha__();
             }
         });
     }
@@ -66,7 +66,7 @@ $(function() {
     });
 });
 
-window.__nodebbGreetestCreateCaptcha__ = function () {
+window.__nodebbGeetestCreateCaptcha__ = function () {
     var args = plugin['geetest'].geetestArgs;
 
     window.initGeetest(
@@ -82,7 +82,7 @@ window.__nodebbGreetestCreateCaptcha__ = function () {
             new_captcha: true,
         },
         function (captchaObj){
-            window.greetestInstance = captchaObj;
+            window.geetestInstance = captchaObj;
         },
     )
 };

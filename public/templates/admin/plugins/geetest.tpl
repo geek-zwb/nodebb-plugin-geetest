@@ -1,4 +1,4 @@
-        <form role="form" class="greetest-settings">
+        <form role="form" class="geetest-settings">
 <div class="row">
     <div class="col">
         <div class="panel panel-default">
@@ -23,9 +23,7 @@
                              </div>
                              <p class="help-block">Keep your private key private</p>
 
-                <div class="row">
                    <button class="btn btn-lg btn-primary" id="save" type="button">Save</button>
-                </div>
             </div>
         </div>
     </div>

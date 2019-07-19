@@ -11,11 +11,11 @@ var geetestIns;
 plugin.init = function (params, callback) {
     Meta.settings.get('geetest', function (err, settings) {
         winston.info('[plugins geetest] Settings loaded');
-        if (settings.recaptchaEnabled === 'on') {
+        if (settings.geetestEnabled === 'on') {
             if (settings.geetestId && settings.geetestKey) {
                 geetestIns = new Geetest({
-                    geetest_id: '48a6ebac4ebc6642d68c217fca33eb4d',
-                    geetest_key: '4f1c085290bec5afdc54df73535fc361'
+                    geetest_id: settings.geetestId,
+                    geetest_key: settings.geetestKey
                 });
             }
         }
@@ -25,7 +25,7 @@ plugin.init = function (params, callback) {
     });
 }
 plugin.addCaptcha = function (data, callback) {
-    winston.info('[plugins geetest] geetestIns' + geetestIns);
+    winston.info('[plugins geetest] geetestIns ' + geetestIns);
     if (geetestIns) {
         // 向极验申请每次验证所需的challenge
         geetestIns.register({

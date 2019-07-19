@@ -7,24 +7,17 @@ var pluginData = require('./plugin.json');
 
 var plugin = {};
 var geetestIns;
-var geetestArgs;
 
 plugin.init = function (params, callback) {
     params.router.get('/admin/geetest', params.middleware.admin.buildHeader, renderAdmin)
     Meta.settings.get('geetest', function (err, settings) {
+        winston.info('[plugins geetest] Settings loaded');
         if (settings.recaptchaEnabled === 'on') {
             if (settings.geetestId && settings.geetestKey) {
                 geetestIns = new Geetest({
                     geetest_id: '48a6ebac4ebc6642d68c217fca33eb4d',
                     geetest_key: '4f1c085290bec5afdc54df73535fc361'
                 });
-                var geetestInfo = body && body.data || {};
-                geetestArgs = {
-                    challenge: geetestInfo.challenge,
-                    gt: geetestInfo.gt,
-                    gtId: geetestInfo.gtId,
-                    https: true,
-                };
                 callback();
             }
         }
@@ -125,3 +118,4 @@ function renderAdmin(req, res) {
     res.render('admin/plugins/geetest', pluginData || {});
 }
 
+module.exports = plugin;

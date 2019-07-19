@@ -110,7 +110,7 @@ plugin.checkRegistration = function (data, callback) {
 // hooks filter:admin.header.build
 plugin.addAdminNavigation = function (header, callback) {
     header.plugins.push({
-        route: 'plugins/geetest',
+        route: '/plugins/geetest',
         icon: 'fa-shield',
         name: 'Geetest'
     });

@@ -9,7 +9,7 @@ var plugin = {};
 var geetestIns;
 
 plugin.init = function (params, callback) {
-    params.router.get('/admin/geetest', params.middleware.admin.buildHeader, renderAdmin)
+    params.router.get('/admin/plugins/geetest', params.middleware.admin.buildHeader, renderAdmin)
     Meta.settings.get('geetest', function (err, settings) {
         winston.info('[plugins geetest] Settings loaded');
         if (settings.recaptchaEnabled === 'on') {

@@ -2,9 +2,8 @@
 <div class="row">
     <div class="col">
         <div class="panel panel-default">
-            <div class="panel-heading">Math Captcha Failures Report</div>
+            <div class="panel-heading">Geetest Settings</div>
             <div class="panel-body">
-
                            <div class="checkbox">
                              <label>
                                <input data-toggle-target="#geetestHttps" type="checkbox" id="geetestEnabled" name="geetestEnabled"/> Enable Geetest
@@ -24,9 +23,9 @@
                              </div>
                              <p class="help-block">Keep your private key private</p>
 
-            </div>
-            <div class="panel-footer">
-                 <button class="btn btn-lg btn-primary" id="save" type="button">Save</button>
+                <div class="row">
+                   <button class="btn btn-lg btn-primary" id="save" type="button">Save</button>
+                </div>
             </div>
         </div>
     </div>

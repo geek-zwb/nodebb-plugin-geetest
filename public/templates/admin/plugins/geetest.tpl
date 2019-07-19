@@ -6,7 +6,7 @@
             <div class="panel-body">
                            <div class="checkbox">
                              <label>
-                               <input data-toggle-target="#geetestHttps" type="checkbox" id="geetestEnabled" name="geetestEnabled"/> Enable Geetest
+                               <input data-toggle-target="#geetestEnabled" type="checkbox" id="geetestEnabled" name="geetestEnabled"/> Enable Geetest
                              </label>
                            </div>
                            <p class="help-block">To check every user registration. You need a private and a public key, get yours from

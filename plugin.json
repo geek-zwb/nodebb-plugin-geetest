@@ -11,9 +11,9 @@
     { "hook": "filter:register.check", "method": "checkRegistration" }
   ],
   "scripts": [
-    "public/js/main.js"
+    "./public/js/main.js"
   ],
   "languages": "./languages",
   "defaultLang": "en-GB",
-  "templates": "public/templates"
+  "templates": "./public/templates"
 }

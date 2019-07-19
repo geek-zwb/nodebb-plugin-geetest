@@ -20,6 +20,7 @@ plugin.init = function (params, callback) {
             }
         }
         params.router.get('/admin/plugins/geetest', params.middleware.admin.buildHeader, plugin.renderAdmin)
+        params.router.get('/api/admin/geetest', plugin.renderAdmin);
         callback();
     });
 }

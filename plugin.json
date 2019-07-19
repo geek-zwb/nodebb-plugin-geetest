@@ -9,12 +9,11 @@
     { "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
     { "hook": "filter:register.build", "method": "addCaptcha" },
     { "hook": "filter:register.check", "method": "checkRegistration" },
-    { "hook": "action:nodebb-plugin-prometheus.init", "method": "initPrometheus" }
   ],
   "scripts": [
-    "./public/js/main.js"
+    "public/js/main.js"
   ],
-  "languages": "./languages",
+  "languages": "/languages",
   "defaultLang": "en-GB",
-  "templates": "./public/templates"
+  "templates": "public/templates"
 }

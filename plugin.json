@@ -8,12 +8,12 @@
     { "hook": "static:app.load", "method": "init" },
     { "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
     { "hook": "filter:register.build", "method": "addCaptcha" },
-    { "hook": "filter:register.check", "method": "checkRegistration" },
+    { "hook": "filter:register.check", "method": "checkRegistration" }
   ],
   "scripts": [
     "public/js/main.js"
   ],
-  "languages": "/languages",
+  "languages": "./languages",
   "defaultLang": "en-GB",
   "templates": "public/templates"
 }

@@ -9,7 +9,6 @@ var plugin = {};
 var geetestIns;
 
 plugin.init = function (params, callback) {
-    params.router.get('/admin/plugins/geetest', params.middleware.admin.buildHeader, renderAdmin)
     Meta.settings.get('geetest', function (err, settings) {
         winston.info('[plugins geetest] Settings loaded');
         if (settings.recaptchaEnabled === 'on') {
@@ -18,9 +17,10 @@ plugin.init = function (params, callback) {
                     geetest_id: '48a6ebac4ebc6642d68c217fca33eb4d',
                     geetest_key: '4f1c085290bec5afdc54df73535fc361'
                 });
-                callback();
             }
         }
+        params.router.get('/admin/plugins/geetest', params.middleware.admin.buildHeader, plugin.renderAdmin)
+        callback();
     });
 }
 plugin.addCaptcha = function (data, callback) {
@@ -118,7 +118,7 @@ plugin.addAdminNavigation = function (header, callback) {
     callback(null, header);
 };
 
-function renderAdmin(req, res) {
+plugin.renderAdmin = function(req, res) {
     res.render('admin/plugins/geetest', pluginData || {});
 }
 

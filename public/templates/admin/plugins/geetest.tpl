@@ -1,7 +1,7 @@
+        <form role="form" class="greetest-settings">
 <div class="row">
     <div class="col">
         <div class="panel panel-default">
-        <form role="form" class="greetest-settings">
             <div class="panel-heading">Math Captcha Failures Report</div>
             <div class="panel-body">
 
@@ -25,7 +25,69 @@
                              <p class="help-block">Keep your private key private</p>
 
             </div>
-                             </form>
+            <div class="panel-footer">
+                 <button class="btn btn-lg btn-primary" id="save" type="button">Save</button>
+            </div>
         </div>
     </div>
 </div>
+                             </form>
+
+<script type="text/javascript">
+          require(['settings'], function(Settings) {
+            var nbbId = 'geetest',
+            klass = nbbId + '-settings',
+            wrapper = $( '.' + klass );
+
+            function onChange (e) {
+              var target = $(e.target);
+              var input = wrapper.find(target.attr('data-toggle-target'));
+              if (target.is(':checked')) {
+                input.prop('disabled', false);
+              } else {
+                input.prop('disabled', true);
+              }
+            }
+
+            wrapper.find('input[type="checkbox"]').on('change', onChange);
+
+            Settings.load(nbbId, wrapper, function() {
+              wrapper.find('input[type="checkbox"]').each(function() {
+                onChange({target: this});
+              });
+            });
+
+            wrapper.find('#save').on('click', function(e) {
+              e.preventDefault();
+              wrapper.find('.form-group').removeClass('has-error');
+
+              var invalidSelector = '';
+              var invalidCount = 0;
+              wrapper.find('input[type="checkbox"]').each(function(i, checkbox) {
+                checkbox = $(checkbox);
+                if (checkbox.is(':checked') && !wrapper.find(checkbox.attr('data-toggle-target')).val()) {
+                  invalidSelector += (!invalidCount++ ? '' : ', ') + checkbox.attr('data-toggle-target');
+                }
+              });
+
+              if (invalidSelector) {
+                wrapper.find(invalidSelector).each(function(i, el) {
+                  el = $(el);
+                  el.parents('.form-group').addClass('has-error');
+                });
+              } else {
+                Settings.save(nbbId, wrapper, function() {
+                  app.alert({
+                    type: 'success',
+                    alert_id: nbbId,
+                    title: 'Reload Required',
+                    message: 'Please reload your NodeBB to have your changes take effect',
+                    clickfn: function() {
+                      socket.emit('admin.reload');
+                    }
+                  });
+                });
+              }
+            });
+          });
+      </script>
